@@ -1,12 +1,11 @@
 terraform {
+  required_version = ">= 1.5.1"
 
   backend "s3" {
-    bucket = "grupo1-terraform-state"
-    key = "sis-distribuidos-avanzados/terraform.tfstate"
+    bucket = "master-software-terraform-state"
+    key    = "grupo1/ecr/terraform.tfstate"
     region = "us-east-1"
   }
-  
-  required_version = ">= 1.5.1"
 
   required_providers {
     aws = {
