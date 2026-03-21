@@ -1,0 +1,48 @@
+version: '3.8'
+
+services:
+  fastapi-app:
+    build:
+      context: ./app
+      dockerfile: Dockerfile
+    ports:
+      - "8000:8000"
+    environment:
+      AWS_ENDPOINT_URL: http://localstack-adapter:4566
+      AWS_ACCESS_KEY_ID: test
+      AWS_SECRET_ACCESS_KEY: test
+      AWS_DEFAULT_REGION: us-east-1
+      SECRET_NAME: db_credentials
+      STORAGE_TYPE: s3
+    volumes:
+      - "logs:/var/log/app"
+      - "./example-data:/var/task/data"
+    depends_on:
+      - localstack-adapter
+
+  prometheus-adapter:
+    build:
+      context: ./prometheus
+      dockerfile: Dockerfile
+    ports:
+      - "9200:9200"
+    volumes:
+      - "logs:/var/log/app"
+    depends_on:
+      - fastapi-app
+
+  localstack-adapter:
+    container_name: localstack-adapter
+    image: localstack/localstack:4
+    ports:
+      - "4566:4566"
+    environment:
+      - SERVICES=s3,lambda,secretsmanager
+      - AWS_DEFAULT_REGION=us-east-1
+      - AWS_ACCESS_KEY_ID=test
+      - AWS_SECRET_ACCESS_KEY=test
+    volumes:
+      - "./app/init:/etc/localstack/init/ready.d/"
+
+volumes:
+  logs:

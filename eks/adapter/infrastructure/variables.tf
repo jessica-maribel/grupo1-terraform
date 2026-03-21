@@ -1,0 +1,29 @@
+variable "aws_region" {
+  type        = string
+  default     = "us-east-1"
+  description = "AWS region"
+}
+
+variable "grupo" {
+  type        = string
+  description = "nombre del grupo, por ejemplo: grupo-1"
+  default = "grupo-1"
+}
+
+
+variable "kubernetes_cluster_name" {
+  type    = string
+  default = "master-dev-cluster"
+}
+
+variable "kubernetes_host" {
+  type        = string
+  description = "EKS Cluster Endpoint"
+  default ="https://7723FAB5AE2F45533AB4136D4DD2C458.gr7.us-east-1.eks.amazonaws.com"
+}
+
+variable "kubernetes_ca_certificate" {
+  type        = string
+  description = "EKS Cluster CA Certificate"
+  default ="LS0tLS1CRUdJTiBDRVJUSUZJQ0FURS0tLS0tCk1JSURCVENDQWUyZ0F3SUJBZ0lJTTFQR1RJVWN6SlV3RFFZSktvWklodmNOQVFFTEJRQXdGVEVUTUJFR0ExVUUKQXhNS2EzVmlaWEp1WlhSbGN6QWVGdzB5TmpBek1qQXlNVEkzTkRsYUZ3MHpOakF6TVRjeU1UTXlORGxhTUJVeApFekFSQmdOVkJBTVRDbXQxWW1WeWJtVjBaWE13Z2dFaU1BMEdDU3FHU0liM0RRRUJBUVVBQTRJQkR3QXdnZ0VLCkFvSUJBUURjUGc3aHVtUmQrMkdEQU9yMnovcWFrWnE2c0JQcDBGT0dCWHc2cXBvT2dFazZBREFIRThJUk14dS8KNlpWbUhacEhySmJzRDlTajBPTzZyTGQzdG0zam5BRGlwY0hJTXFtNVhmdlVIOUo1S25JY21MUGdIZ1ZKNlowUwpLUXR2cE5ObjdoT0pMTEdoWkpGNjVqR2l6TWk3YmFLYXB4eDhSMmRJR2NtbTh5Q3FsQXpxOUpkMXpWOVpmRXRQCjVZMzhMV2pGcnlleG9JTGgrSWVnUXlHaWNha1pzSG82d1Q2d09RSzlXNnFCbTVxMUFFQ1prNnFIejIyQ1QzNWQKc053UjYzYkZKY3JtbUdncktSeEVwVVBCS0Yza3lZTVA2UmtrZjFRZWRUbm9meVJlUDFtQXNMSmdoeFBuMXFjMgpTU3QxQThsVWFwNW1UQllnM3VzRklHNTgyRzJIQWdNQkFBR2pXVEJYTUE0R0ExVWREd0VCL3dRRUF3SUNwREFQCkJnTlZIUk1CQWY4RUJUQURBUUgvTUIwR0ExVWREZ1FXQkJTRG1TYnhkK0dLWG9PNkJvQXR0amxWZzM5d0dqQVYKQmdOVkhSRUVEakFNZ2dwcmRXSmxjbTVsZEdWek1BMEdDU3FHU0liM0RRRUJDd1VBQTRJQkFRQWlyUnJtVmtyUQphSU4yT2xMSVQwTlNHTW5rdURoYkJJMmR2U2hLRnpqWk9IVHhENGkvcUFkWkJHaVoweHRjQ3lJZ1kyOWJZZEZ6Cm1DdFU5MVNNdzhGNDNMMCtiSDZPQVpCakFrdEZNK0E0anJIQS9Eb0M2T2tXSVViSFVSRjJrTFIzRkZ3V1JlM1AKdUFkQmZRZkVBZ24wSmVGSkg2U1VtTHlOd1AxZkVoYThVZWZ4c3RjcmUwcHpLUll4WmJTbjQ0NnV2TUZEblFZZwprWENVYUVxVnJ2aHhGT3BIaFJiQm0ySWVDd2FsOVZDN244WHp0TU9QNmQ1T3JqU01pb2xleFcvSUVzK3E2eFVwCmRKUUdpZXhHY3h2STRyUmhPSWxkWlEzdFdyWWdQY2dFY2I1cllWcjlabTBKTzNvamo0MlR3cWkxak4wZ2cxTlYKVU9MSkJQaVZHVk9jCi0tLS0tRU5EIENFUlRJRklDQVRFLS0tLS0K"
+}
