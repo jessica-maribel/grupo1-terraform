@@ -18,6 +18,7 @@ build
 
 ```
 docker build -t adapter_service .
+docker build --platform linux/arm64 -t adapter_service .
 ```
 
 tag
