@@ -24,8 +24,8 @@ resource "kubernetes_deployment" "adapter_fastapi" {
         container {
           name = "adapter-fastapi"
           # image             = "${data.terraform_remote_state.base.outputs.repository_url}:latest"
-          # image             = "${data.terraform_remote_state.base.outputs.ecr_repository_repository_url}:latest"
-          image             = "${data.aws_ecr_repository.adapter_service.repository_url}:latest"
+          image             = "${data.terraform_remote_state.base.outputs.ecr_repository_repository_url}:latest"
+          # image             = "${data.aws_ecr_repository.adapter_service.repository_url}:latest"
           image_pull_policy = "Always"
 
           port {
@@ -55,8 +55,8 @@ resource "kubernetes_deployment" "adapter_fastapi" {
 
         container {
           name              = "prometheus-adapter"
-          # image             = "${data.terraform_remote_state.base.outputs.ecr_repositories.repository_url}:prometheus-adapter-latest"
-          image = "${data.aws_ecr_repository.adapter_service.repository_url}:prometheus-adapter-latest"
+          image             = "${data.terraform_remote_state.base.outputs.ecr_repository_repository_url}:prometheus-adapter-latest"
+          # image = "${data.aws_ecr_repository.adapter_service.repository_url}:prometheus-adapter-latest"
           image_pull_policy = "Always"
 
           port {

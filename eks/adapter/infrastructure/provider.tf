@@ -43,7 +43,7 @@ data "terraform_remote_state" "base" {
 }
 
 # hack
-data "aws_ecr_repository" "adapter_service" {
-  name = "adapter_service"
-}
+# data "aws_ecr_repository" "adapter_service" {
+#   name = "adapter_service"
+# }
 
